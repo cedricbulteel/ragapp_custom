@@ -33,6 +33,7 @@ import { MistralForm } from "./providers/mistral";
 import { OllamaForm } from "./providers/ollama";
 import { OpenAIForm } from "./providers/openai";
 import { TSystemsForm } from "./providers/t-systems";
+import { HFForm } from "./providers/huggingface";
 
 export const ModelConfig = ({
   sectionTitle,
@@ -114,6 +115,8 @@ export const ModelConfig = ({
         return <MistralForm form={form} defaultValues={defaultValues} />;
       case "groq":
         return <GroqForm form={form} defaultValues={defaultValues} />;
+      case "huggingface":
+        return <HFForm form={form} defaultValues={defaultValues} />;
       default:
         return null;
     }
