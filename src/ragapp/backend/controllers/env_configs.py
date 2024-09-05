@@ -7,7 +7,7 @@ from backend.models.base_env import BaseEnvConfig
 
 logger = logging.getLogger(__name__)
 
-
+print('test')
 class EnvConfigManager:
     @classmethod
     def update(
