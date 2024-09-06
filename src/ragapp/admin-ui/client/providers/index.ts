@@ -36,8 +36,8 @@ export const ModelConfigSchema = z
         return MistralConfigSchema.parse(data);
       case "groq":
         return GroqConfigSchema.parse(data);
-      case "huggingface_api":
-          return HFConfigSchema.parse(data):
+      case "huggingface":
+          return HFConfigSchema.parse(data);
       default:
         return true;
     }

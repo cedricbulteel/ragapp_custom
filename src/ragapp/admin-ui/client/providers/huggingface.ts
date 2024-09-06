@@ -17,5 +17,5 @@ export const DEFAULT_HF_CONFIG: z.input<typeof HFConfigSchema> = {
   model_provider: "huggingface",
   model: "meta-llama/Meta-Llama-3.1-8B",
   embedding_model: "BAAI/bge-m3",
-  hugginface_model_name: "",
+  huggingface_model_name: "",
 };

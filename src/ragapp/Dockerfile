@@ -33,6 +33,8 @@ RUN curl -sSL https://install.python-poetry.org | POETRY_HOME=/opt/poetry python
 # Copy current code to the container
 # and remove the frontend folder
 COPY poetry.lock pyproject.toml ./
+
+RUN poetry lock 
 # Install dependencies
 RUN poetry install --no-root --no-cache --only main
 
