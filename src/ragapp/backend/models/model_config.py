@@ -95,6 +95,12 @@ class GroqConfig(BaseModel):
         env="GROQ_API_KEY",
     )
 
+class HFConfig(BaseModel):
+    huggingface_model_name: str | None = Field(
+        default=None,
+        description="The Huggingface model name to use",
+        env="HUGGINGFACE_MODEL_NAME",
+    )
 
 # We're using inheritance to flatten all the fields into a single class
 # Todo: Refactor API to nested structure
@@ -107,6 +113,7 @@ class ModelConfig(
     TSystemsConfig,
     MistralConfig,
     GroqConfig,
+    HFConfig,
 ):
     model_provider: str | None = Field(
         default=None,
@@ -152,6 +159,8 @@ class ModelConfig(
                 return self.mistral_api_key is not None
             case "groq":
                 return self.groq_api_key is not None
+            case "huggingface":
+                return self.huggingface_model_name is not None
             case _:
                 return False
 
